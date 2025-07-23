@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debate Website</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+        <nav>
+                
+                    <a id="logo"> 
+                        <div class="logo-container">
+                            <img src="imgmenu4.png" alt="Logo" class="logo">
+                        </div>
+                    </a>
+                    <ul class="dropdown-content" id="dropdown-content">
+                        <li><a href="#home"><div class="listitemcontent">OUR GOAL/HOW WE WORK</div></a></li>
+                        <li><a href="#random"><div class="listitemcontent">DEBATE ONLINE</div></a></li>
+                        <li><a href="#private"><div class="listitemcontent">PRIVATE MATCHES</div></a></li>
+                        <li><a href="#live"><div class="listitemcontent">WATCH YOUR FAVORITE CREATORS</div></a></li>
+                        <li><a href="#"><div class="listitemcontent">DOWNLOAD OUR APP</div></a></li>
+                    </ul>
+                
+                
+        </nav>
+    <header id="main-header">
+        
+    
+        <div class="headerh1">
+        <h1>
+            MasterDebator.
+        </h1>
+        </div>
+        </header>
+        <script>
+            window.addEventListener("scroll", function() {
+            var header = document.getElementById("main-header");
+            var h1 = header.querySelector("h1");
+            if (window.scrollY > 100) { // Adjust the scroll position as needed
+                header.style.height = "20px";
+                header.style.transition = "height 0.3s";
+                h1.style.fontSize = "40px"; 
+                h1.style.marginTop = "10%";
+                h1.style.transition = "font-size 0.3s, margin-top 0.3s"; 
+                
+            } else {
+                header.style.height = "100%";
+                header.style.transition = "height 0.3s";
+                h1.style.fontSize = "160px"; // Adjust the original font size as needed
+                h1.style.marginTop = "-5%";
+                h1.style.transition = "font-size 0.3s, margin-top 0.3s"; // Apply a transition for font size changes
+            }
+        });
+        </script>
+    </header>
+<section class="allsections">
+    <section id="home" class="fade-in">
+        <h2>How Our Platform Works</h2>
+        <p class="home">We encourage thought-provoking discussions on a wide range of topics.
+             Our goal is to foster constructive dialogue that promotes understanding and critical thinking.
+              We believe that open and respectful debates can lead to meaningful insights and solutions, ultimately enriching our collective knowledge and perspectives.
+               Join us in shaping a more informed and interconnected world through the power of conversation. As part of our community, you play a critical role as the audience, judging the debaters and influencing the outcome through our advanced poll and voting system.
+                Your active participation ensures that our debates remain dynamic and engaging, where we collectively decide who 'loses' or 'wins,' further enhancing audience and debatee interaction on our platform.
+        </p>
+    </section>
+
+<section class="main-sections">   
+    <section class="fade-in">
+        <h2 id="random">Participate in thoughtful online discussions with people from around the globe.</h2>
+        <p class="random">You can either act as the audience or a debater on a random or desired topic. 
+             Engaging in these conversations not only broadens your horizons but also promotes empathy, critical thinking, and the exchange of ideas.
+              Whether you're here to share your expertise or to listen and learn, our platform provides a space where meaningful discourse thrives.
+        </p>
+        <br>
+        <br>
+        <a href="choice.html" class="debate-button"><span class="button-text">DEBATE NOW</span></a>
+    </section>
+
+    <section id="private" class="fade-in">
+        <h2>Debate Against Friends or Family.</h2>
+        <p class="private">Engage in private matches/lobbies with your close ones.
+             Our platform offers you the opportunity to engage in friendly yet intellectually stimulating discussions with those you know best. 
+             Challenge each other's viewpoints, refine your arguments, and strengthen your bonds through respectful debate.
+              Whether it's over dinner or across the miles, our private matches ensure that meaningful conversations can happen anywhere, fostering deeper connections and a shared appreciation for diverse perspectives among your inner circle.
+            </p>
+    </section>
+
+    <section id="live" class="fade-in">
+        <h2>Watch Your Favorite Content Creators.</h2>
+        <p class="live">Our platform brings you a unique blend of entertainment and intellectual engagement. 
+            Tune in to watch your beloved influencers and experts engage in spirited debates on trending topics.
+             Witness the clash of ideas, discover new perspectives, and be part of the conversation in real-time.
+              It's a chance to not only enjoy entertainment but also gain valuable insights from some of the most influential voices in the digital world.
+               Join us in this dynamic and interactive experience that combines entertainment with enlightenment. </p>
+    </section>
+</section> 
+</section>
+    <footer>
+        <h5>&copy; 2023 Debate Website</h5>
+    
+    </footer>
+
+    <script src="homepage.js">
+    </script>
+</body>
+</html>
