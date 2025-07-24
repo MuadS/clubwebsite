@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - UH Bio-AI Club</title>
+    <meta name="description" content="Explore machine learning projects by the UH Bio-AI Club, including our Universal Tumor Detector and other cutting-edge research.">
+    
+    <!-- Performance optimizations -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/tumor.js" as="script">
+    <link rel="dns-prefetch" href="//api-inference.huggingface.co">
+    <link rel="preconnect" href="https://api-inference.huggingface.co" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Security and SEO meta tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4ECCF2">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo" role="banner">UH Bio-AI Club</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                <li role="none"><a href="projects.html" class="active" role="menuitem" aria-current="page">Projects</a></li>
+                <li role="none"><a href="about.html" role="menuitem">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Tumor Detector Demo -->
+    <section class="hero" id="main-content">
+        <div class="container">
+            <h1>Universal Tumor Detector</h1>
+            <p>Upload a histology slide image and our AI model will analyze it for malignancy indicators, providing a detailed heat-map visualization of potential tumor regions.</p>
+            
+            <!-- Tumor Detector Demo Form -->
+            <div class="tumor-demo" role="region" aria-labelledby="demo-heading">
+                <h2 id="demo-heading" class="sr-only">Interactive Tumor Detection Demo</h2>
+                <form id="tumor-form" class="demo-form" role="form" aria-label="Tumor detection image upload">
+                    <div class="form-group">
+                        <label for="image-upload">Select Histology Image</label>
+                        <input 
+                            type="file" 
+                            id="image-upload" 
+                            name="image" 
+                            accept="image/*" 
+                            class="form-control file-input"
+                            required
+                            aria-describedby="file-help"
+                            aria-invalid="false"
+                        >
+                        <small id="file-help" class="form-text">Supported formats: JPG, PNG, TIFF. Max size: 10MB</small>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="analyze-btn" aria-describedby="analyze-status">
+                        <span class="btn-text">Analyze Image</span>
+                        <span class="loading" id="loading-spinner" style="display: none;" aria-hidden="true"></span>
+                    </button>
+                    <div id="analyze-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+                </form>
+                
+                <!-- Results Display Area -->
+                <div id="results-container" class="results-container" style="display: none;" role="region" aria-labelledby="results-heading" aria-live="polite">
+                    <h3 id="results-heading">Analysis Results</h3>
+                    <div id="results-content">
+                        <!-- Heat-map visualization will be inserted here -->
+                    </div>
+                </div>
+                
+                <!-- Error Display Area -->
+                <div id="error-container" class="error" style="display: none;" role="alert" aria-live="assertive">
+                    <strong>Error:</strong> <span id="error-message"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Machine Learning Projects</h2>
+            <div class="card-grid" id="projects-grid">
+                <!-- Tumor Detector Project Card -->
+                <div class="card project-card" data-tags="vision medical team-rishav">
+                    <h3>Universal Tumor Detector</h3>
+                    <p class="project-description">Vision Transformer model fine-tuned on histology slides for malignancy detection across multiple cancer types.</p>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Medical AI</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">92% AUROC</span>
+                        <span class="stat">TCGA Dataset</span>
+                    </div>
+                    <a href="projects/tumor-detector.html" class="btn project-btn">Learn More</a>
+                </div>
+
+                <!-- Crystal Growth Prediction -->
+                <div class="card project-card" data-tags="materials simulation team-sarah">
+                    <h3>Crystal Growth Prediction</h3>
+                    <p class="project-description">Machine learning model that predicts crystal formation patterns and growth rates for materials science applications.</p>
+                    <div class="project-tags">
+                        <span class="tag">Materials Science</span>
+                        <span class="tag">Simulation</span>
+                        <span class="tag">Regression</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">R² = 0.87</span>
+                        <span class="stat">10K+ Samples</span>
+                    </div>
+                    <a href="projects/crystal-growth.html" class="btn project-btn">Learn More</a>
+                </div>
+
+                <!-- Protein Folding Classifier -->
+                <div class="card project-card" data-tags="bioinformatics protein team-alex">
+                    <h3>Protein Folding Classifier</h3>
+                    <p class="project-description">Deep neural network for predicting protein secondary structure from amino acid sequences using transformer architecture.</p>
+                    <div class="project-tags">
+                        <span class="tag">Bioinformatics</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Transformers</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">85% Accuracy</span>
+                        <span class="stat">UniProt Data</span>
+                    </div>
+                    <a href="#" class="btn project-btn" onclick="alert('Project page coming soon! Check back for updates.'); return false;">Coming Soon</a>
+                </div>
+
+                <!-- Drug Discovery Assistant -->
+                <div class="card project-card" data-tags="pharmaceutical molecular team-maria">
+                    <h3>Drug Discovery Assistant</h3>
+                    <p class="project-description">Graph neural network for molecular property prediction and drug-target interaction analysis.</p>
+                    <div class="project-tags">
+                        <span class="tag">Drug Discovery</span>
+                        <span class="tag">Graph ML</span>
+                        <span class="tag">Chemistry</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">78% Precision</span>
+                        <span class="stat">ChEMBL Database</span>
+                    </div>
+                    <a href="#" class="btn project-btn" onclick="alert('Project page coming soon! Check back for updates.'); return false;">Coming Soon</a>
+                </div>
+
+                <!-- Genomic Variant Classifier -->
+                <div class="card project-card" data-tags="genomics classification team-david">
+                    <h3>Genomic Variant Classifier</h3>
+                    <p class="project-description">CNN-based model for classifying genetic variants and predicting their pathogenicity in human diseases.</p>
+                    <div class="project-tags">
+                        <span class="tag">Genomics</span>
+                        <span class="tag">Classification</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">91% Sensitivity</span>
+                        <span class="stat">ClinVar Data</span>
+                    </div>
+                    <a href="#" class="btn project-btn" onclick="alert('Project page coming soon! Check back for updates.'); return false;">Coming Soon</a>
+                </div>
+
+                <!-- Ecological Modeling -->
+                <div class="card project-card" data-tags="ecology environmental team-lisa">
+                    <h3>Ecosystem Health Monitor</h3>
+                    <p class="project-description">Time series analysis and prediction model for monitoring ecosystem health using environmental sensor data.</p>
+                    <div class="project-tags">
+                        <span class="tag">Ecology</span>
+                        <span class="tag">Time Series</span>
+                        <span class="tag">Environmental</span>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat">RMSE: 0.23</span>
+                        <span class="stat">IoT Sensors</span>
+                    </div>
+                    <a href="#" class="btn project-btn" onclick="alert('Project page coming soon! Check back for updates.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- No Projects Message (hidden by default) -->
+            <div id="no-projects-message" class="no-projects" style="display: none;">
+                <h3>No Projects Found</h3>
+                <p>We're currently working on exciting new projects. Check back soon for updates!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 UH Bio-AI Club. Advancing the intersection of artificial intelligence and biological sciences.</p>
+        </div>
+    </footer>
+
+    <script src="js/tumor.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/ux-enhancements.js"></script>
+</body>
+</html>

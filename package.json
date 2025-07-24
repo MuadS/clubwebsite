@@ -1,0 +1,30 @@
+{
+  "name": "bio-ai-club-website",
+  "version": "1.0.0",
+  "description": "UH Bio-AI Club website with ML project demos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests configured yet'",
+    "deploy:netlify": "netlify deploy --prod",
+    "deploy:vercel": "vercel --prod",
+    "performance": "echo 'Load performance-test.js in browser console to test performance'",
+    "optimize-images": "echo 'See optimize-images.md for image optimization instructions'",
+    "test-deployment": "echo 'See test-deployment.md for deployment testing checklist'"
+  },
+  "keywords": [
+    "machine-learning",
+    "bio-ai",
+    "static-site",
+    "netlify"
+  ],
+  "author": "UH Bio-AI Club",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

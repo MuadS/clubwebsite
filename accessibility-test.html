@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Test - UH Bio-AI Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .pass { color: green; }
+        .fail { color: red; }
+        .warning { color: orange; }
+        ul { margin: 10px 0; }
+        li { margin: 5px 0; }
+        button {
+            background: #4ECCF2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #2bb8e0; }
+        #results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>UH Bio-AI Club Website Accessibility Test</h1>
+    
+    <div class="test-section">
+        <h2>Manual Accessibility Checklist</h2>
+        <p>Use this checklist to verify accessibility compliance across browsers:</p>
+        
+        <h3>Keyboard Navigation Tests</h3>
+        <ul>
+            <li>✓ Tab through all interactive elements (links, buttons, form controls)</li>
+            <li>✓ Use arrow keys to navigate menu items</li>
+            <li>✓ Press Enter/Space to activate buttons and links</li>
+            <li>✓ Use Home/End keys in navigation menu</li>
+            <li>✓ Ensure focus indicators are visible</li>
+        </ul>
+        
+        <h3>Screen Reader Tests</h3>
+        <ul>
+            <li>✓ All images have appropriate alt text</li>
+            <li>✓ Form labels are properly associated</li>
+            <li>✓ ARIA live regions announce status changes</li>
+            <li>✓ Navigation landmarks are identified</li>
+            <li>✓ Headings create logical document structure</li>
+        </ul>
+        
+        <h3>Visual Tests</h3>
+        <ul>
+            <li>✓ Text has sufficient color contrast (4.5:1 minimum)</li>
+            <li>✓ Focus indicators are clearly visible</li>
+            <li>✓ Touch targets are at least 44x44 pixels</li>
+            <li>✓ Content reflows properly at 200% zoom</li>
+            <li>✓ No information conveyed by color alone</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Browser Compatibility Tests</h2>
+        <p>Test the website in these browsers:</p>
+        
+        <h3>Desktop Browsers</h3>
+        <ul>
+            <li>□ Chrome (latest version)</li>
+            <li>□ Firefox (latest version)</li>
+            <li>□ Safari (latest version)</li>
+            <li>□ Edge (latest version)</li>
+        </ul>
+        
+        <h3>Mobile Browsers</h3>
+        <ul>
+            <li>□ Chrome Mobile (Android)</li>
+            <li>□ Safari Mobile (iOS)</li>
+            <li>□ Firefox Mobile</li>
+        </ul>
+        
+        <h3>Test Features</h3>
+        <ul>
+            <li>□ Navigation menu functionality</li>
+            <li>□ File upload in tumor detector</li>
+            <li>□ Form validation and error messages</li>
+            <li>□ Responsive design breakpoints</li>
+            <li>□ Skip links functionality</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Automated Tests</h2>
+        <button onclick="runBasicTests()">Run Basic Accessibility Tests</button>
+        <button onclick="validateHTML()">Check HTML Structure</button>
+        <button onclick="checkColorContrast()">Test Color Contrast</button>
+        
+        <div id="results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Performance Tests</h2>
+        <ul>
+            <li>□ Page load time under 3 seconds</li>
+            <li>□ Images optimized for web</li>
+            <li>□ CSS and JS minified for production</li>
+            <li>□ Proper caching headers</li>
+            <li>□ No console errors</li>
+        </ul>
+    </div>
+
+    <script>
+        function runBasicTests() {
+            const results = document.getElementById('results');
+            let output = '<h3>Basic Accessibility Test Results</h3>';
+            
+            // Test for skip links
+            const skipLinks = document.querySelectorAll('.skip-link');
+            output += `<p class="${skipLinks.length > 0 ? 'pass' : 'fail'}">
+                Skip Links: ${skipLinks.length > 0 ? 'PASS' : 'FAIL'} 
+                (Found ${skipLinks.length} skip links)
+            </p>`;
+            
+            // Test for alt text on images
+            const images = document.querySelectorAll('img');
+            const imagesWithoutAlt = Array.from(images).filter(img => !img.alt);
+            output += `<p class="${imagesWithoutAlt.length === 0 ? 'pass' : 'fail'}">
+                Image Alt Text: ${imagesWithoutAlt.length === 0 ? 'PASS' : 'FAIL'} 
+                (${imagesWithoutAlt.length} images missing alt text)
+            </p>`;
+            
+            // Test for form labels
+            const inputs = document.querySelectorAll('input, select, textarea');
+            const inputsWithoutLabels = Array.from(inputs).filter(input => {
+                const id = input.id;
+                const label = document.querySelector(`label[for="${id}"]`);
+                const ariaLabel = input.getAttribute('aria-label');
+                const ariaLabelledby = input.getAttribute('aria-labelledby');
+                return !label && !ariaLabel && !ariaLabelledby;
+            });
+            output += `<p class="${inputsWithoutLabels.length === 0 ? 'pass' : 'fail'}">
+                Form Labels: ${inputsWithoutLabels.length === 0 ? 'PASS' : 'FAIL'} 
+                (${inputsWithoutLabels.length} inputs without labels)
+            </p>`;
+            
+            // Test for heading structure
+            const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            const h1Count = document.querySelectorAll('h1').length;
+            output += `<p class="${h1Count === 1 ? 'pass' : 'warning'}">
+                Heading Structure: ${h1Count === 1 ? 'PASS' : 'WARNING'} 
+                (Found ${h1Count} H1 elements, ${headings.length} total headings)
+            </p>`;
+            
+            results.innerHTML = output;
+        }
+        
+        function validateHTML() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>HTML Validation</h3><p>For complete HTML validation, use the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validator</a></p>';
+        }
+        
+        function checkColorContrast() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>Color Contrast</h3><p>For detailed color contrast analysis, use tools like <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Contrast Checker</a> or browser extensions like axe DevTools.</p>';
+        }
+        
+        // Run basic tests on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(runBasicTests, 1000);
+        });
+    </script>
+</body>
+</html>

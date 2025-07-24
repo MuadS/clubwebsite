@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Tumor Detector - UH Bio-AI Club</title>
+    <meta name="description" content="Vision Transformer model for malignancy detection in histology slides - Machine learning project by the UH Bio-AI Club.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo" role="banner">UH Bio-AI Club</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+                <li role="none"><a href="../projects.html" role="menuitem">Projects</a></li>
+                <li role="none"><a href="../about.html" role="menuitem">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+                <ol role="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><span class="breadcrumb-separator" aria-hidden="true">›</span></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><span class="breadcrumb-separator" aria-hidden="true">›</span></li>
+                    <li><span class="breadcrumb-current" aria-current="page">Universal Tumor Detector</span></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Project Hero Section -->
+    <section class="hero project-hero" id="main-content">
+        <div class="container">
+            <h1>Universal Tumor Detector</h1>
+            <p class="project-subtitle">Vision Transformer model fine-tuned on histology slides for malignancy detection across multiple cancer types</p>
+            <div class="project-meta">
+                <div class="project-tags">
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Medical AI</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Vision Transformer</span>
+                </div>
+                <div class="project-stats">
+                    <span class="stat">92% AUROC</span>
+                    <span class="stat">TCGA Dataset</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Dataset Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Problem & Dataset</h2>
+            </div>
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>The Challenge</h3>
+                    <p>Cancer diagnosis through histopathological analysis is a critical but time-consuming process that requires expert pathologists to examine tissue samples under microscopes. Manual analysis can be subjective and prone to human error, especially when dealing with subtle malignancy indicators across different cancer types.</p>
+                    
+                    <p>Our Universal Tumor Detector addresses this challenge by providing an AI-powered tool that can analyze histology slides and identify potential malignant regions with high accuracy, serving as a valuable second opinion for medical professionals.</p>
+                    
+                    <h3>Dataset Overview</h3>
+                    <p>We utilized The Cancer Genome Atlas (TCGA) dataset, which contains high-quality histopathological images from multiple cancer types including breast, lung, colon, and prostate cancers. The dataset provides both whole slide images and region-of-interest patches with expert annotations.</p>
+                    
+                    <div class="dataset-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">15,000+</span>
+                            <span class="stat-label">Image Patches</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Cancer Types</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Classes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="placeholder-image">
+                        <p>Histology Sample Images</p>
+                        <small>Examples of malignant vs. benign tissue samples from TCGA dataset</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="content-section method-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Method</h2>
+            </div>
+            <div class="content-grid">
+                <div class="content-visual">
+                    <div class="placeholder-image">
+                        <p>Vision Transformer Architecture</p>
+                        <small>ViT model architecture adapted for histopathological image analysis</small>
+                    </div>
+                </div>
+                <div class="content-text">
+                    <h3>Approach</h3>
+                    <p>We employed a Vision Transformer (ViT) architecture, which has shown superior performance in medical image analysis compared to traditional convolutional neural networks. The model processes histology images as sequences of patches, allowing it to capture both local cellular features and global tissue patterns.</p>
+                    
+                    <h3>Model Architecture</h3>
+                    <p>Our implementation uses a ViT-Base model with 12 transformer layers, each containing multi-head self-attention mechanisms. The model processes 224x224 pixel images divided into 16x16 patches, resulting in 196 patch embeddings that are fed through the transformer encoder.</p>
+                    
+                    <h3>Training Process</h3>
+                    <p>The model was pre-trained on ImageNet and then fine-tuned on our histopathological dataset using transfer learning. We employed data augmentation techniques including rotation, color jittering, and elastic deformation to improve generalization across different staining protocols and imaging conditions.</p>
+                    
+                    <div class="method-highlights">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Multi-scale attention mechanisms for capturing cellular and tissue-level features</li>
+                            <li>Cross-cancer type generalization through diverse training data</li>
+                            <li>Heat-map visualization for interpretable predictions</li>
+                            <li>Robust performance across different staining protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="content-section results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Results</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>AUROC Score</h3>
+                    <div class="metric-value">92%</div>
+                    <p>Area Under the Receiver Operating Characteristic curve, indicating excellent discrimination between malignant and benign tissue</p>
+                </div>
+                <div class="result-card">
+                    <h3>Sensitivity</h3>
+                    <div class="metric-value">89%</div>
+                    <p>True positive rate for detecting malignant tissue, crucial for medical screening applications</p>
+                </div>
+                <div class="result-card">
+                    <h3>Specificity</h3>
+                    <div class="metric-value">94%</div>
+                    <p>True negative rate for correctly identifying benign tissue, minimizing false alarms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try it Yourself Section -->
+    <section class="content-section demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Try it Yourself</h2>
+                <p>Experience our Universal Tumor Detector model in action</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-placeholder">
+                    <h3>Interactive Demo</h3>
+                    <p>Upload a histology slide image and our AI model will analyze it for malignancy indicators, providing a detailed heat-map visualization.</p>
+                    
+                    <div class="demo-external">
+                        <p>The full interactive demo is available on our main projects page:</p>
+                        <a href="../projects.html#tumor-demo" class="btn">
+                            Try the Demo
+                        </a>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <small>
+                            <strong>Medical Disclaimer:</strong> This tool is for research and educational purposes only. 
+                            It should not be used for actual medical diagnosis or treatment decisions. 
+                            Always consult with qualified medical professionals for health-related concerns.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects Section -->
+    <section class="content-section related-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Related Projects</h2>
+                <p>Explore more of our machine learning work</p>
+            </div>
+            <div class="card-grid">
+                <div class="card project-card">
+                    <h3>Crystal Growth Prediction</h3>
+                    <p>Machine learning model for predicting crystal formation patterns and growth rates for materials science applications.</p>
+                    <div class="project-tags">
+                        <span class="tag">Materials Science</span>
+                        <span class="tag">Simulation</span>
+                        <span class="tag">Regression</span>
+                    </div>
+                    <a href="crystal-growth.html" class="btn project-btn">Learn More</a>
+                </div>
+                <div class="card project-card">
+                    <h3>Drug Discovery Assistant</h3>
+                    <p>Graph neural network for molecular property prediction and drug-target interaction analysis.</p>
+                    <div class="project-tags">
+                        <span class="tag">Drug Discovery</span>
+                        <span class="tag">Graph ML</span>
+                        <span class="tag">Chemistry</span>
+                    </div>
+                    <a href="#" class="btn project-btn" onclick="alert('Project page coming soon! Check back for updates.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="../projects.html" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 UH Bio-AI Club. Advancing the intersection of artificial intelligence and biological sciences.</p>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/ux-enhancements.js"></script>
+</body>
+</html>
