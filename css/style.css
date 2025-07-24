@@ -2207,7 +2207,10 @@ am Section Styles */
   .cta-buttons {
     display: none !important;
   }
-}rgin: 0 auto;
+}
+
+.headshot-placeholder {
+  margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
 }
