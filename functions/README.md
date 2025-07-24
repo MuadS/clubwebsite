@@ -1,6 +1,6 @@
 # Serverless Functions
 
-This directory contains Netlify serverless functions for the Bio-AI Club website.
+This directory contains Netlify serverless functions for the Med-Tech Society website.
 
 ## run-tumor.js
 

@@ -1,7 +1,7 @@
 {
   "name": "bio-ai-club-website",
   "version": "1.0.0",
-  "description": "UH Bio-AI Club website with ML project demos",
+  "description": "UH Med-Tech Society website with ML project demos",
   "main": "index.html",
   "scripts": {
     "dev": "netlify dev",
@@ -19,7 +19,7 @@
     "static-site",
     "netlify"
   ],
-  "author": "UH Bio-AI Club",
+  "author": "UH Med-Tech Society",
   "license": "MIT",
   "devDependencies": {
     "netlify-cli": "^17.0.0"

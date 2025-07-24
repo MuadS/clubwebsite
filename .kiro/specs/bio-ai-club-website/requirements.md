@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Transform the existing club website project into a comprehensive UH Bio-AI Club website that showcases machine learning projects, provides interactive demos, and serves as a hub for club activities. The website should feature a prominent Universal Tumor Detector demo, project showcase cards, member profiles, and upcoming events, all built with vanilla HTML/CSS/JS for easy deployment and maintenance.
+Transform the existing club website project into a comprehensive UH Med-Tech Society website that showcases machine learning projects, provides interactive demos, and serves as a hub for club activities. The website should feature a prominent Universal Tumor Detector demo, project showcase cards, member profiles, and upcoming events, all built with vanilla HTML/CSS/JS for easy deployment and maintenance.
 
 ## Requirements
 
 ### Requirement 1
 
-**User Story:** As a visitor to the UH Bio-AI Club website, I want to see upcoming events on the homepage, so that I can stay informed about club activities and explore the club's work.
+**User Story:** As a visitor to the UH Med-Tech Society website, I want to see upcoming events on the homepage, so that I can stay informed about club activities and explore the club's work.
 
 #### Acceptance Criteria
 

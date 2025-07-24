@@ -1,7 +1,7 @@
 # Accessibility Implementation Report
 
 ## Overview
-This report documents the accessibility improvements implemented for the UH Bio-AI Club website as part of Task 10: "Implement accessibility and cross-browser testing".
+This report documents the accessibility improvements implemented for the UH Med-Tech Society website as part of Task 10: "Implement accessibility and cross-browser testing".
 
 ## Implemented Accessibility Features
 

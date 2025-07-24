@@ -2,7 +2,7 @@
 
 ## Overview
 
-The UH Bio-AI Club website will be built as a static site using vanilla HTML, CSS, and JavaScript with serverless functions for ML model integration. The architecture prioritizes simplicity, maintainability, and fast deployment while providing an engaging user experience that showcases the club's technical capabilities. Color scheme must be centered around #4ECCF2.
+The UH Med-Tech Society website will be built as a static site using vanilla HTML, CSS, and JavaScript with serverless functions for ML model integration. The architecture prioritizes simplicity, maintainability, and fast deployment while providing an engaging user experience that showcases the club's technical capabilities. Color scheme must be centered around #4ECCF2.
 
 ## Architecture
 
@@ -220,4 +220,4 @@ The UH Bio-AI Club website will be built as a static site using vanilla HTML, CS
 - **HTTPS enforcement**: Automatic via deployment platform
 - **Security headers**: CSP, HSTS, X-Frame-Options
 
-This design provides a solid foundation for the UH Bio-AI Club website that meets all requirements while maintaining simplicity and extensibility for future enhancements.
+This design provides a solid foundation for the UH Med-Tech Society website that meets all requirements while maintaining simplicity and extensibility for future enhancements.
